@@ -26,12 +26,6 @@ public class Pizza extends Consumazione implements IPizza{
 		this.name = name;
 		this.ingredienti = new ArrayList<>();
 	}
-	
-
-    @Override
-    public String getName() {
-        return name;
-    }
 
     @Override
     public void addIngredienti(String ingrediente) {
@@ -48,9 +42,13 @@ public class Pizza extends Consumazione implements IPizza{
 
 	@Override
 	public double getPrice() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	
+	@Override
+	public String getName() {
+		return null;
+	}
+
+
 }

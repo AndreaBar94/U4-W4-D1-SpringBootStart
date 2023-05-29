@@ -1,15 +1,15 @@
 package entities;
 
-public class ExtraCheeseDecorator extends ExtraAdditionDecorator{
+public class ExtraHamDecorator  extends ExtraAdditionDecorator{
 	
-	public ExtraCheeseDecorator(Consumazione consumazione) {
+	public ExtraHamDecorator(Consumazione consumazione) {
 		this.consumazione = consumazione;
 	}
 	
 	
 	@Override
 	public String getProductName() {
-		return consumazione.getProductName()+ " +1 extra cheese";
+		return consumazione.getProductName()+ " +1 extra ham";
 	}
 
 	@Override
@@ -20,6 +20,6 @@ public class ExtraCheeseDecorator extends ExtraAdditionDecorator{
 	
 	  @Override
 	    public String toString() {
-	        return consumazione.toString() + " +1 extra cheese";
+	        return consumazione.toString() + " +1 extra ham";
 	    }
 }
