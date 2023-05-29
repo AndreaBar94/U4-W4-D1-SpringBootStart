@@ -37,11 +37,10 @@ public class DemoApplication {
 		log.info(hawaii.toString());
 		
 		Consumazione custom =new ExtraPineappleDecorator(new ExtraCheeseDecorator(new ExtraHamDecorator((Consumazione)ctx.getBean("Margherita"))));
-		custom.setProductName("Custom");
+		custom.setProductName("Custom");//non funziona, ho sbagliato un toString() da qualche parte
 		log.info(custom.toString());
 
 		ctx.close();
 	}
-	
 	
 }
