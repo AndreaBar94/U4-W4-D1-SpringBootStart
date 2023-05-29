@@ -9,7 +9,7 @@ public class ExtraPineappleDecorator  extends ExtraAdditionDecorator{
 	
 	@Override
 	public String getProductName() {
-		return consumazione.getProductName()+ " +1 extra cheese";
+		return consumazione.getProductName()+ " +1 extra pineapple";
 	}
 
 	@Override
@@ -20,6 +20,6 @@ public class ExtraPineappleDecorator  extends ExtraAdditionDecorator{
 	
 	  @Override
 	    public String toString() {
-	        return consumazione.toString() + " +1 extra cheese";
+	        return consumazione.toString() + " +1 extra pineapple";
 	    }
 }
