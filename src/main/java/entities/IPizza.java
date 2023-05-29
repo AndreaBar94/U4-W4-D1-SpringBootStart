@@ -1,6 +1,6 @@
 package entities;
 
-public interface IPizza {
+public interface IPizza{
 	
 	String getName();
 	

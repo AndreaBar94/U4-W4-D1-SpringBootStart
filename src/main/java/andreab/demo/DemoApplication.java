@@ -19,6 +19,7 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 		
+		log.info("HELLO WORLD!");
 		//esempio con decorator
 		Consumazione pizzaCustom = new Pizza2("La Zozzona");
 		pizzaCustom.setProductName("La Zozzona");

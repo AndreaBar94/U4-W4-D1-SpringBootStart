@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Primary;
 
 import entities.IPizza;
 import entities.Pizza;
+import entities.Pizza2;
 
 @Configuration
 public class BeansConfiguration {
@@ -17,7 +18,7 @@ public class BeansConfiguration {
 	 
 	 @Bean(name = "Margherita")
 	 IPizza margherita() {
-		 Pizza margherita = new Pizza("Margherita");
+		 Pizza2 margherita = new Pizza2("Margherita");
 		 margherita.addIngredienti(base());
 		 return margherita;
 	 }
