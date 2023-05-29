@@ -4,8 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
-import entities.IPizza;
-
+import entities.Consumazione;
 import entities.Pizza;
 
 @Configuration
@@ -18,18 +17,10 @@ public class BeansConfiguration {
 	 
 	 @Bean(name = "Margherita")
 	 @Primary
-	 IPizza margherita() {
+	 Consumazione margherita() {
 		 Pizza margherita = new Pizza("Margherita");
 		 margherita.addIngredienti(base());
 		 return margherita;
 	 }
 	 
-	 @Bean(name = "Hawaii")
-	 IPizza hawaii() {
-		 	Pizza hawaii = new Pizza("Hawaii");
-		 	hawaii.addIngredienti(base());
-		 	hawaii.addIngredienti("Prosciutto");
-		 	hawaii.addIngredienti("Ananas");
-		 	return hawaii;
-	 }
 }

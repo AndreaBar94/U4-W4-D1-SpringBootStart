@@ -7,6 +7,7 @@ import config.BeansConfiguration;
 import entities.Consumazione;
 import entities.ExtraCheeseDecorator;
 import entities.ExtraHamDecorator;
+import entities.ExtraPineappleDecorator;
 import entities.IPizza;
 import entities.Pizza;
 import lombok.extern.slf4j.Slf4j;
@@ -48,14 +49,14 @@ public class DemoApplication {
 		ctx.register(BeansConfiguration.class);
 	    ctx.refresh();
 	    
-	    IPizza margherita = (IPizza) ctx.getBean("Margherita");
-	    IPizza hawaii = (IPizza) ctx.getBean("Hawaii");
-	    log.info(ctx.getBean("Margherita").toString());
-		log.info(ctx.getBean("Hawaii").toString());
+	    Consumazione margherita = (Consumazione) ctx.getBean("Margherita");
+	    log.info(margherita.toString());
+	    
+	    Consumazione hawaii = new ExtraPineappleDecorator(new ExtraHamDecorator((Consumazione) ctx.getBean("Margherita")));
+		log.info(hawaii.toString());
 		
-		Consumazione p = new ExtraCheeseDecorator(new ExtraCheeseDecorator(new ExtraHamDecorator(ctx.getBean(Pizza.class)))) ;
-		p.setProductName("Pizza custom");
-		log.info(p.getProductName());
+		Consumazione p =new ExtraCheeseDecorator(new ExtraCheeseDecorator(new ExtraHamDecorator(ctx.getBean(Pizza.class))));
+		p.setProductName("Custom");
 		log.info(p.toString());
 
 		ctx.close();
