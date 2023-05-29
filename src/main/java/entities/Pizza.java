@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter 
 @AllArgsConstructor
 @Component
-public class Pizza implements IPizza{
+public class Pizza extends Consumazione implements IPizza{
 	
 	private String name;
 	private List<String> ingredienti;
@@ -46,6 +46,12 @@ public class Pizza implements IPizza{
                 ", ingredients=" + ingredienti +
                 '}';
     }
+
+	@Override
+	public double getPrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 	
 }

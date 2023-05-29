@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import config.BeansConfiguration;
 import entities.Consumazione;
 import entities.ExtraCheeseDecorator;
+import entities.IPizza;
 import entities.Pizza;
 import entities.Pizza2;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +26,8 @@ public class DemoApplication {
 		log.info(zozzonaConCheeeeeeaseee.getProductName());
 		
 		
-		configWithConfigurationAnnotation();
+	//	configWithConfigurationAnnotation();
+		configWithComponent();
 	}
 	
 	
@@ -40,6 +42,23 @@ public class DemoApplication {
 		p.setProductName("caio");
 		log.info(p.getProductName());
 	
+		ctx.close();
+	}
+	
+	public static void configWithComponent() {
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+		
+		ctx.register(BeansConfiguration.class);
+	    ctx.refresh();
+	    
+	    IPizza margherita = (IPizza) ctx.getBean("Margherita");
+	    IPizza hawaii = (IPizza) ctx.getBean("Hawaii");
+	    
+		Consumazione p = new ExtraCheeseDecorator(new ExtraCheeseDecorator(new ExtraCheeseDecorator(ctx.getBean(Pizza2.class)))) ;
+		p.setProductName("caio");
+		log.info(p.getProductName());
+		log.info(p.toString());
+
 		ctx.close();
 	}
 
