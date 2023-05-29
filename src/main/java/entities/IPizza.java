@@ -6,4 +6,5 @@ public interface IPizza{
 	
 	void addIngredienti(String ingredienti);
 	
+	
 }
